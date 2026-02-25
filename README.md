@@ -1,20 +1,100 @@
-problem : Intelligent Camera Angle & Scene Change Detection System
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Camera Angle & Scene Change Detection System</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, #1f2933, #111827);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 25px 20px;
+            background: #fff;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        h1, h2 {
+            color: #1f2933;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .diagram {
+            background: #f1f5f9;
+            padding: 20px;
+            font-family: monospace;
+            border-left: 5px solid #3b82f6;
+            white-space: pre-wrap;
+            border-radius: 6px;
+        }
+        .badge {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #111827;
+            color: white;
+            margin-top: 40px;
+        }
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
 
-Problem Definition:
+<body>
 
-Manual identification of camera angle changes and scene transitions in videos is time-consuming and error-prone.
-This project proposes an automated system that detects scene changes and camera angle variations to enable efficient video segmentation and analysis.
+<header>
+    <h1>🎥 Intelligent Camera Angle & Scene Change Detection System</h1>
+    <p>Automated video segmentation using Computer Vision & Machine Learning</p>
+</header>
 
->>>>Models & Techniques Used
+<section>
+    <h2>🧩 Problem Definition</h2>
+    <p>
+        Manual identification of camera angle changes and scene transitions in videos is time-consuming and error-prone.
+        This project proposes an automated system that detects scene changes and camera angle variations to enable
+        efficient video segmentation and analysis.
+    </p>
+</section>
 
-PySceneDetect – Content-based scene boundary detection
+<section>
+    <h2>🧠 Models & Techniques Used</h2>
+    <span class="badge">PySceneDetect</span>
+    <span class="badge">K-Means Clustering</span>
+    <span class="badge">OpenCV</span>
+    <span class="badge">Python</span>
+    <span class="badge">NumPy</span>
+</section>
 
-K-Means Clustering – Color histogram-based frame similarity analysis
+<section>
+    <h2>🏗️ System Architecture</h2>
 
-Python, OpenCV, NumPy
-
->>>System Architecture
- Architecture Flow
+    <div class="diagram">
 Input Video
    │
    ▼
@@ -35,81 +115,74 @@ Feature Extraction (Color Histograms)
 K-Means Clustering
    │
    ▼
-Decision Engine
-(Scene / Camera Angle Change)
+Decision Engine (Scene / Camera Angle Change)
    │
    ▼
 Crop & Save Video Segments
    │
    ▼
 Final Output (Scenes + Timestamps)
-> Architecture Explanation
-1.Input Video
+    </div>
+</section>
 
-The system takes a raw video file as input.
+<section>
+    <h2>🔍 Architecture Explanation</h2>
+    <ol>
+        <li><b>Input Video:</b> The system takes a raw video file as input.</li>
+        <li><b>Frame Extraction:</b> Video is split into frames using OpenCV.</li>
+        <li><b>Preprocessing:</b> Frames are resized, normalized, and denoised.</li>
+        <li><b>Scene Detection:</b> PySceneDetect detects abrupt and gradual transitions.</li>
+        <li><b>Feature Extraction:</b> Color histograms are computed.</li>
+        <li><b>K-Means Clustering:</b> Frames are grouped by visual similarity.</li>
+        <li><b>Decision Engine:</b> Confirms true scene/camera angle change.</li>
+        <li><b>Crop & Save:</b> Each validated scene is saved separately.</li>
+        <li><b>Final Output:</b> Scene clips, timestamps, and scene count.</li>
+    </ol>
+</section>
 
-2.Frame Extraction
+<section>
+    <h2>⚡ Performance (11-Minute Video)</h2>
+    <ul>
+        <li>Scene detection: <b>30–35 seconds</b></li>
+        <li>Crop & save scenes: <b>2–2.5 minutes</b></li>
+    </ul>
+</section>
 
-Video is split into frames using OpenCV so that computer vision operations can be applied.
+<section>
+    <h2>🎯 Accuracy</h2>
+    <ul>
+        <li>PySceneDetect: <b>70–90%</b></li>
+        <li>K-Means: <b>~85%</b></li>
+    </ul>
+</section>
 
-3.Preprocessing
+<section>
+    <h2>🚧 Limitations</h2>
+    <ul>
+        <li>Slower processing for high-resolution videos</li>
+        <li>Sensitive to extreme lighting changes</li>
+    </ul>
+</section>
 
-Frames are resized, normalized, and denoised to improve detection reliability.
+<section>
+    <h2>🚀 Future Work</h2>
+    <ul>
+        <li>Train deep learning models with labeled datasets</li>
+        <li>Automatic genre classification (Action, Drama, Comedy, etc.)</li>
+        <li>GPU acceleration</li>
+    </ul>
+</section>
 
-4.Scene Detection (PySceneDetect)
+<section>
+    <h2>🎬 Demo Video</h2>
+    <a href="https://drive.google.com/file/d/17dioWVazRYF0MrNdHTFjgr4SQ_SwJUMP/view" target="_blank">
+        Click here to watch demo
+    </a>
+</section>
 
-Detects abrupt and gradual scene transitions and outputs candidate boundaries.
+<footer>
+    <p>© 2026 Intelligent Scene Detection Project</p>
+</footer>
 
-5.Feature Extraction
-
-Color histograms are computed for frames around each boundary.
-
-6.K-Means Clustering
-
-Clusters frames based on visual similarity to validate true transitions.
-
-7.Decision Engine
-
-Combines PySceneDetect results and clustering output to confirm scene or camera angle change.
-
-8.Crop & Save Segments
-
-Each validated scene is cropped and stored as a separate video clip.
-
-9.Final Output
-
-Individual scene clips
-
-Timestamps
-
-Total scene count
-
->>>Performance (11-Minute Video)
-
-Scene detection: 30–35 seconds
-
-Crop & save scenes: 2–2.5 minutes
-
->>>Accuracy
-
-PySceneDetect: 70–90%
-
-K-Means: ~85%
-
->>Limitations
-
-Slower processing for high-resolution videos
-
-Sensitive to extreme lighting changes
-
->>Future Work
-
-Train deep learning models with labeled datasets
-
-Automatic genre classification (Action, Drama, Comedy, etc.)
-
-GPU acceleration for faster execution
-
->>>Demo Video
-
-🔗 https://drive.google.com/file/d/17dioWVazRYF0MrNdHTFjgr4SQ_SwJUMP/view
+</body>
+</html>
