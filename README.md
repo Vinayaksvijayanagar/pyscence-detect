@@ -56,5 +56,5 @@ Input Video
 
 ---
 
-# Demo Video
-https://drive.google.com/file/d/17dioWVazRYF0MrNdHTFjgr4SQ_SwJUMP/view
+# for Demo Video
+send mail : vinayakvijayanagar6@gmail.com
